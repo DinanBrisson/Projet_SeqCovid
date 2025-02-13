@@ -33,6 +33,7 @@ git clone https://github.com/DinanBrisson/Projet_SeqCovid.git
 cd Projet_SeqCovid
 
 ### Lancer les codes
+/!\ MODIFIER LE CHEMIN DU FICHIER FASTQ EN BAS DE fastq_proc /!\
 Nettoyer les reads, analyser la qualité, assembler avec SPAdes
 
  - python FastQ/fastq_proc.py
