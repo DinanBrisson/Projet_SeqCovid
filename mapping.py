@@ -12,35 +12,35 @@ SORTED_BAM = "aligned_reads_sorted.bam"
 COVERAGE_FILE = "coverage.txt"
 
 
-# 1️⃣ Indexation de la séquence de référence
+# Indexation de la séquence de référence
 def index_reference():
-    print("🔍 Indexation de la séquence de référence...")
+    print("Indexation de la séquence de référence...")
     subprocess.run(f"bwa index {REFERENCE}", shell=True, check=True)
 
 
-# 2️⃣ Mapping des reads sur la séquence de référence
+# Mapping des reads sur la séquence de référence
 def align_reads():
-    print("📌 Alignement des reads...")
+    print("Alignement des reads...")
     subprocess.run(f"bwa mem -t 5 {REFERENCE} {READS_R1} {READS_R2} > {SAM_FILE}", shell=True, check=True)
 
 
-# 3️⃣ Conversion du fichier SAM en BAM et tri des reads
+# Conversion du fichier SAM en BAM et tri des reads
 def convert_sort_bam():
-    print("🔄 Conversion et tri du fichier BAM...")
+    print("Conversion et tri du fichier BAM...")
     subprocess.run(f"samtools view -Sb {SAM_FILE} > {BAM_FILE}", shell=True, check=True)
     subprocess.run(f"samtools sort {BAM_FILE} -o {SORTED_BAM}", shell=True, check=True)
     subprocess.run(f"samtools index {SORTED_BAM}", shell=True, check=True)
 
 
-# 4️⃣ Calcul de la couverture des reads sur le génome de référence
+# Calcul de la couverture des reads sur le génome de référence
 def compute_coverage():
-    print("📊 Calcul de la couverture...")
+    print(" Calcul de la couverture...")
     subprocess.run(f"samtools depth {SORTED_BAM} > {COVERAGE_FILE}", shell=True, check=True)
 
 
-# 5️⃣ Visualisation de la couverture des reads
+# Visualisation de la couverture des reads
 def plot_coverage():
-    print("📈 Génération du graphique de couverture...")
+    print("Génération du graphique de couverture...")
     df = pd.read_csv(COVERAGE_FILE, sep="\t", header=None, names=["Chromosome", "Position", "Couverture"])
 
     plt.figure(figsize=(12, 6))
