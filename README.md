@@ -38,17 +38,17 @@ Nettoyer les reads, analyser la qualité, assembler avec SPAdes
  - python FastQ/fastq_proc.py
 
   Exécuter uniquement FastQC :
-  - python3 scripts/fastq_proc.py --fastqc-only
+  - python scripts/fastq_proc.py --fastqc-only
   Nettoyer les reads sans assembler :
-  - python3 scripts/fastq_proc.py --clean-only
+  - python scripts/fastq_proc.py --clean-only
 
 Vérifier la qualité de l’assemblage avec QUAST
 
- - python3 FastQ/quast.py
+ - python FastQ/quast.py
 
 Aligner les reads sur une séquence de référence et calculer la couverture
 
- - python3 mapping.py
+ - python mapping.py
 
 Identifier, analyser et annoter les variants génétiques
 
