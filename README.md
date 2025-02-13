@@ -28,6 +28,32 @@ SnpEff (annotation des variants)
 
 ## Utilisation
 
+git clone https://github.com/DinanBrisson/Projet_SeqCovid.git
+
+cd Projet_SeqCovid
+
+### Lancer les codes
+Nettoyer les reads, analyser la qualité, assembler avec SPAdes
+
+ - python FastQ/fastq_proc.py
+
+  Exécuter uniquement FastQC :
+  - python3 scripts/fastq_proc.py --fastqc-only
+  Nettoyer les reads sans assembler :
+  - python3 scripts/fastq_proc.py --clean-only
+
+Vérifier la qualité de l’assemblage avec QUAST
+
+ - python3 FastQ/quast.py
+
+Aligner les reads sur une séquence de référence et calculer la couverture
+
+ - python3 mapping.py
+
+Identifier, analyser et annoter les variants génétiques
+
+ - python3 variants.py
+
 
 ### Auteur
 Dinan BRISSON, ISEN-TMS
