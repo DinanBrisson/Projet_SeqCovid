@@ -56,4 +56,4 @@ Identifier, analyser et annoter les variants génétiques
 
 
 ### Auteur
-Dinan BRISSON, ISEN-TMS
+Dinan BRISSON, ISEN-M2 TMS
