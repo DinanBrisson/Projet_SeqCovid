@@ -19,7 +19,7 @@ class FastqProcessor:
         os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.assembly_output_dir, exist_ok=True)
 
-    def check_fastq_head(self, num_lines=20):
+    def check_fastq_head(self, num_lines=5):
         print(f"Checking first {num_lines} lines of {self.fastq_file}...\n")
         with open(self.fastq_file, "r") as file:
             for i in range(num_lines):
@@ -152,3 +152,8 @@ class FastqProcessor:
             self.plot_statistics()
         if assemble:
             self.run_spades_assembly()
+
+if __name__ == "__main__":
+    FASTQ_FILE = "data/FastQ/SRR32230015.fastq" # remplacer avec un chemin de fichier fastq
+    processor = FastqProcessor(FASTQ_FILE)
+    processor.process(clean_reads=True, assemble=True)
