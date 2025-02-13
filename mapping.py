@@ -1,7 +1,6 @@
 import subprocess
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
 # Définition des fichiers
 REFERENCE = "data/FastA/refSeq.fasta"  # Séquence de référence
